@@ -1,140 +1,903 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="sumit kumar">
-  <title>Trial </title>
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
-  <link href="css/style.css" rel="stylesheet" type="text/css"> 
-  <script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
-  </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="sumit kumar">
+    <title>Trial</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
+    <style>
+        .mr-5 {
+            margin-right: 5px;
+        }
+        
+        .ml-5 {
+            margin-left: 5px;
+        }
+        
+        .w-100 {
+            width: 100px;
+        }
+        
+        .w-150 {
+            width: 150px;
+        }
+        
+        .w-250 {
+            width: 250px;
+        }
+        
+        .topBar {
+            background-color: #ffffff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            font-size: 13px;
+        }
+        
+        .topBar ul {
+            margin: 0;
+        }
+        
+        .topBar ul li {
+            line-height: 42px;
+        }
+        
+        .topBar a {
+            color: #878c94;
+            text-decoration: none;
+        }
+        
+        .text-primary {
+            color: #0cd4d2;
+        }
+        
+        .topBar ul.topBarNav {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .topBar ul.topBarNav li {
+            position: relative;
+            display: inline-block;
+            margin-right: -4px;
+            border-right: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .topBar ul.topBarNav li:last-child {
+            border-right: none;
+        }
+        
+        .topBar ul.topBarNav li a {
+            display: block;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+        
+        .topBar ul.topBarNav li ul {
+            background-color: #ffffff;
+            position: absolute;
+            top: 42px;
+            left: auto;
+            min-width: 10px;
+            right: 4px;
+            border-radius: 0px;
+            border: solid 0px;
+            margin-right: -4px;
+            padding: 0;
+            list-style-type: none;
+            z-index: 9999;
+            -webkit-transition: all 0.1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            -ms-transition: all 0.1s ease-in-out;
+            -o-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+            -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+        }
+        
+        .topBar ul.topBarNav li ul li {
+            display: block;
+            line-height: 30px;
+            width: 100%;
+            border: none;
+        }
+        
+        .topBar ul.topBarNav li a {
+            display: block;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+        
+        .topBar .dropdown-menu>li>a {
+            display: block;
+            padding: 6px 20px;
+            clear: both;
+            font-weight: normal;
+            line-height: 1.42857143;
+            color: #878c94;
+            font-size: 15px white-space: nowrap;
+        }
+        
+        .topBar .dropdown-menu>li>a:hover,
+        .dropdown-menu>li>a:focus {
+            color: #00BCD4;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        /*CART/////////////////////*/
+        
+        .cart-items::-webkit-scrollbar {
+            width: 6px;
+            background-color: #ECECEC;
+        }
+        
+        .cart-items::-webkit-scrollbar-track {}
+        
+        .cart-items::-webkit-scrollbar-thumb {
+            background-color: #084951;
+            outline: 1px solid black;
+        }
+        
+        .topBar ul.topBarNav li ul.cart .cart-items {
+            padding: 10px;
+            height: 200px;
+            overflow: auto;
+        }
+        
+        .topBar ul.topBarNav li ul.cart .cart-items .items {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .topBar ul.topBarNav li ul.cart .cart-items .items li {
+            overflow: hidden;
+            clear: left;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .topBar ul.topBarNav li ul.cart .cart-items .items li .product-image {
+            width: 60px;
+            float: left;
+        }
+        
+        .topBar ul.topBarNav li ul.cart .cart-items .items li a {
+            margin: 0;
+            padding: 0;
+            line-height: normal;
+            background-color: transparent;
+            display: inline;
+        }
+        
+        .topBar ul.topBarNav li ul.cart .cart-items .items li .product-details {
+            position: relative;
+            margin-left: 60px;
+            padding: 0 15px 0 10px;
+        }
+        
+        .topBar ul.topBarNav li ul.cart .cart-items .items li .product-details .close-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 10px;
+            line-height: normal;
+        }
+        
+        .topBar ul.topBarNav li ul.cart .cart-footer {
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        .topBar ul.topBarNav li ul.cart .cart-footer a {
+            text-align: center;
+            padding: 10px 20px;
+            margin: 0;
+            background-color: transparent;
+        }
+        /*/////////////////////////middleBar//////////////////////*/
+        
+        .middleBar {
+            padding: 10px 0 0 0;
+            margin: 0;
+            min-height: 70px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        @media (min-width: 767px) {
+            .display-table {
+                display: table;
+                width: 100%;
+            }
+            .vertical-align {
+                display: table-cell;
+                vertical-align: middle;
+                float: none;
+            }
+            .grid-space-1 div[class*="col-"] {
+                padding: 0 1px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            div[class^="col-"] {
+                margin-bottom: 30px;
+            }
+        }
+        
+        .middleBar .form-control {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            box-shadow: none;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            border-radius: 0;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+            -webkit-transition: all 0.1s ease-in;
+            -moz-transition: all 0.1s ease-in;
+            -ms-transition: all 0.1s ease-in;
+            -o-transition: all 0.1s ease-in;
+            transition: all 0.1s ease-in;
+        }
+        
+        .form-control.input-lg {
+            font-size: 15px;
+        }
+        
+        .middleBar .btn.btn-default {
+            color: #ffffff;
+            background-color: #0cd4d2;
+            border: 1px solid #0cd4d2;
+            border-radius: 0px;
+        }
+        
+        .middleBar .header-items .header-item {
+            display: inline-block;
+        }
+        
+        .middleBar .header-items .header-item a {
+            position: relative;
+            display: block;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -ms-border-radius: 100%;
+            border-radius: 100%;
+            text-align: center;
+            color: #35404f;
+        }
+        
+        .middleBar .header-items .header-item a sub {
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background-color: #0cd4d2;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -ms-border-radius: 100%;
+            border-radius: 100%;
+            color: #ffffff;
+            font-size: 9px;
+            -webkit-transition: all 0.2s ease-in;
+            -moz-transition: all 0.2s ease-in;
+            -ms-transition: all 0.2s ease-in;
+            -o-transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in;
+        }
+        
+        .middleBar .header-items .header-item a:hover {
+            background-color: #0cd4d2;
+            color: #ffffff;
+        }
+        /*/////////////////////////navbar-default///////////////*/
+        
+        .navbar-default {
+            -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            margin-bottom: 0;
+            border: none;
+        }
+        
+        .navbar-default .navbar-nav>.open>a,
+        .navbar-default .navbar-nav>.open>a:hover,
+        .navbar-default .navbar-nav>.open>a:focus {
+            color: #0cd4d2;
+            background-color: transparent;
+        }
+        
+        .navbar-default .navbar-nav>.open>a,
+        .navbar-default .navbar-nav>.open>a:hover,
+        .navbar-default .navbar-nav>.open>a:after {
+            border-top: solid 2px #0cd4d2;
+        }
+        
+        .navbar-default .dropdown-menu {
+            padding: 0;
+            font-size: 14px;
+            background-color: #ffffff;
+            color: #878c94;
+            border: none;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            border-radius: 0;
+            -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            -webkit-transition: all 0.1s ease-in;
+            -moz-transition: all 0.1s ease-in;
+            -ms-transition: all 0.1s ease-in;
+            -o-transition: all 0.1s ease-in;
+            transition: all 0.1s ease-in;
+        }
+        
+        .dropdown-menu>li>a {
+            display: block;
+            padding: 6px 20px;
+            clear: both;
+            font-weight: normal;
+            line-height: 1.42857143;
+            color: #878c94;
+            white-space: nowrap;
+        }
+        
+        .dropdown-menu>li>a:hover {
+            color: #0cd4d2;
+        }
+        /***********************
+     megaDropMenu
+////////////////////////////*/
+        
+        .navbar-default .container {
+            position: relative;
+        }
+        
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu {
+            position: static;
+        }
+        
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu {
+            width: 100%;
+        }
+        
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li:first-child {
+            padding: 20px 0px 5px 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            /* text-align: center; */
+            color: #0cd4d2;
+        }
+        
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a {
+            display: block;
+            color: #878c94;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 8px 15px;
+        }
+        
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a:hover {
+            color: #00BCD4;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu img {
+            display: block;
+            max-width: 100%;
+            padding: 20px;
+        }
+    </style>
+    <style type="text/css">
+        body {
+            font-family: "Open Sans", sans-serif;
+        }
+        
+        h2 {
+            color: #000;
+            font-size: 26px;
+            font-weight: 300;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            margin: 30px 0 80px;
+        }
+        
+        h2 b {
+            color: #ffc000;
+        }
+        
+        h2::after {
+            content: "";
+            width: 100px;
+            position: absolute;
+            margin: 0 auto;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.2);
+            left: 0;
+            right: 0;
+            bottom: -20px;
+        }
+        
+        .carousel {
+            margin: 50px auto;
+            padding: 0 70px;
+        }
+        
+        .carousel .item {
+            min-height: 330px;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .carousel .item .img-box {
+            height: 160px;
+            width: 100%;
+            position: relative;
+        }
+        
+        .carousel .item img {
+            max-width: 100%;
+            max-height: 100%;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
+        
+        .carousel .item h4 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        .carousel .item .btn {
+            color: #333;
+            border-radius: 0;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: bold;
+            background: none;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            margin-top: 5px;
+            line-height: 16px;
+        }
+        
+        .carousel .item .btn:hover,
+        .carousel .item .btn:focus {
+            color: #fff;
+            background: #000;
+            border-color: #000;
+            box-shadow: none;
+        }
+        
+        .carousel .item .btn i {
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .carousel .thumb-wrapper {
+            text-align: center;
+        }
+        
+        .carousel .thumb-content {
+            padding: 15px;
+        }
+        
+        .carousel .carousel-control {
+            height: 100px;
+            width: 40px;
+            background: none;
+            margin: auto 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .carousel .carousel-control i {
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            margin: -16px 0 0 0;
+            z-index: 5;
+            left: 0;
+            right: 0;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: none;
+            font-weight: bold;
+        }
+        
+        .carousel .item-price {
+            font-size: 13px;
+            padding: 2px 0;
+        }
+        
+        .carousel .item-price strike {
+            color: #999;
+            margin-right: 5px;
+        }
+        
+        .carousel .item-price span {
+            color: #86bd57;
+            font-size: 110%;
+        }
+        
+        .carousel .carousel-control.left i {
+            margin-left: -3px;
+        }
+        
+        .carousel .carousel-control.left i {
+            margin-right: -3px;
+        }
+        
+        .carousel .carousel-indicators {
+            bottom: -50px;
+        }
+        
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            width: 10px;
+            height: 10px;
+            margin: 4px;
+            border-radius: 50%;
+            border-color: transparent;
+        }
+        
+        .carousel-indicators li {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .carousel-indicators li.active {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .star-rating li {
+            padding: 0;
+        }
+        
+        .star-rating i {
+            font-size: 14px;
+            color: #ffc000;
+        }
+    </style>
+    <style>
+        div.shop-tab-container {
+            z-index: 10;
+            background-color: #ffffff;
+            padding: 0 !important;
+            border-radius: 0px;
+            -moz-border-radius: 0px;
+            border: 1px solid #ddd;
+            margin-top: 0px;
+            margin-left: 0px;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            background-clip: padding-box;
+            opacity: 0.97;
+            filter: alpha(opacity=97);
+        }
+        
+        div.shop-tab-menu {
+            padding-right: 0;
+            padding-left: 0;
+            padding-bottom: 0;
+        }
+        
+        div.shop-tab-menu div.list-group {
+            margin-bottom: 0;
+        }
+        
+        div.shop-tab-menu div.list-group>a {
+            margin-bottom: 0;
+        }
+        
+        div.shop-tab-menu div.list-group>a .glyphicon,
+        div.shop-tab-menu div.list-group>a .fa {
+            color: #bee5eb;
+        }
+        
+        div.shop-tab-menu div.list-group>a:first-child {
+            border-top-right-radius: 0;
+            -moz-border-top-right-radius: 0;
+        }
+        
+        div.shop-tab-menu div.list-group>a:last-child {
+            border-bottom-right-radius: 0;
+            -moz-border-bottom-right-radius: 0;
+        }
+        
+        div.shop-tab-menu div.list-group>a.active,
+        div.shop-tab-menu div.list-group>a.active .glyphicon,
+        div.shop-tab-menu div.list-group>a.active .fa {
+            background-color: #ffffff;
+            background-image: #5A55A3;
+            color: #5A55A3;
+        }
+        
+        div.shop-tab-content {
+            background-color: #ffffff;
+            /* border: 1px solid #eeeeee; */
+            padding-left: 5px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            vertical-align: text-middle;
+        }
+        
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 0.75rem 1.25rem;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.120);
+        }
+        
+        .btn-group {
+            padding-top: 20px;
+        }
+        
+        .btn-group>.btn {
+            padding: 0.5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: 0rem;
+        }
+        
+        .cat {
+            text-align: left;
+        }
+        
+        .img-responsive,
+        .thumbnail>img,
+        .thumbnail a>img,
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
+            display: relative;
+            width: 100%;
+            height: 360px;
+        }
+        
+        .carousel-inner {
+            border-radius: 0px;
+        }
+        
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, .5);
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            padding: 0 0 10px 25px;
+            color: #fff;
+            text-align: left;
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            z-index: 15;
+            margin: 0;
+            padding: 0 25px 25px 0;
+            text-align: right;
+        }
+        
+        .carousel-control.left,
+        .carousel-control.right {
+            background-image: none;
+        }
+    </style>
+    <style>
+        .navbar-new-top {
+            background: #fff;
+        }
+        
+        .navbar-brand {
+            font-weight: 600;
+        }
+        
+        .navbar-brand img {
+            width: 20%;
+        }
+        
+        .navbar-new-top ul {
+            margin-right: 9%;
+        }
+        
+        .navbar-new-top ul li {
+            margin-right: 8%;
+        }
+        
+        .navbar-new-bottom {
+            background-color: #f7f7f7;
+            box-shadow: 0 5px 6px -2px rgba(0, 0, 0, .3);
+            border-top: 1px solid #e0e0e0;
+            margin-top: 4%;
+            height: 40px;
+        }
+        
+        .navbar-new-bottom ul li {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+        
+        .navbar-nav .nav-item a {
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 1s ease;
+        }
+        
+        .navbar-nav .nav-item a:hover {
+            color: #0062cc;
+        }
+        
+        .dropdown-menu.show {
+            background: #f8f9fa;
+            border-radius: 0;
+        }
+        
+        .header-btn {
+            width: 161%;
+            border: none;
+            border-radius: 1rem;
+            padding: 8%;
+            background: #0062cc;
+            color: #fff;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+        }
+    </style>
+</head>
 
 <body>
-  <!--=========-TOP_BAR============-->
-  <nav class="topBar">
-      
-    <div class="container">
-      <ul class="list-inline pull-left hidden-sm hidden-xs">
-        <li><span class="text-primary">Haves a question? </span> Call +120 558 7885</li>
-      </ul>
-      <ul class="topBarNav pull-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"> <i class="fa fa-usd mr-5"></i>USD<i class="fa fa-angle-down ml-5"></i>
-          </a>
-          <ul class="dropdown-menu w-100" role="menu">
-            <li><a href="#"><i class="fa fa-eur mr-5"></i>EUR</a>
-            </li>
-            <li class=""><a href="#"><i class="fa fa-usd mr-5"></i>USD</a>
-            </li>
-            <li><a href="#"><i class="fa fa-gbp mr-5"></i>GBP</a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"> <img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-french.jpg" class="mr-5" alt=""> <span class="hidden-xs"> French <i class="fa fa-angle-down ml-5"></i></span> </a>
-          <ul class="dropdown-menu w-100" role="menu">
-            <li>
-              <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-english.jpg" class="mr-5" alt="">English</a>
-            </li>
-            <li class="">
-              <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-french.jpg" class="mr-5" alt="">French</a>
-            </li>
-            <li>
-              <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-german.jpg" class="mr-5" alt="">German</a>
-            </li>
-            <li>
-              <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-spain.jpg" class="mr-5" alt="">Spain</a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"> <i class="fa fa-user mr-5"></i><span class="hidden-xs">My Account<i class="fa fa-angle-down ml-5"></i></span> </a>
-          <ul class="dropdown-menu w-150" role="menu">
-            <li><a href="login.html">Login</a>
-            </li>
-            <li><a href="register.html">Create Account</a>
-            </li>
-            <li class="divider"></li>
-            <li><a href="wishlist.html">Wishlist (5)</a>
-            </li>
-            <li><a href="cart.html">My Cart</a>
-            </li>
-            <li><a href="checkout.html">Checkout</a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"> <i class="fa fa-shopping-basket mr-5"></i> <span class="hidden-xs">
+    <!--=========-TOP_BAR============-->
+    <nav class="topBar">
+        <div class="container">
+            <ul class="list-inline pull-left hidden-sm hidden-xs">
+                <li><span class="text-primary">Have a question? </span> Call +120 558 7885</li>
+            </ul>
+            <ul class="topBarNav pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"> <i class="fa fa-usd mr-5"></i>USD<i class="fa fa-angle-down ml-5"></i>
+                    </a>
+                    <ul class="dropdown-menu w-100" role="menu">
+                        <li><a href="#"><i class="fa fa-eur mr-5"></i>EUR</a>
+                        </li>
+                        <li class=""><a href="#"><i class="fa fa-usd mr-5"></i>USD</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gbp mr-5"></i>GBP</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"> <img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-french.jpg" class="mr-5" alt=""> <span class="hidden-xs"> French <i class="fa fa-angle-down ml-5"></i></span> </a>
+                    <ul class="dropdown-menu w-100" role="menu">
+                        <li>
+                            <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-english.jpg" class="mr-5" alt="">English</a>
+                        </li>
+                        <li class="">
+                            <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-french.jpg" class="mr-5" alt="">French</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-german.jpg" class="mr-5" alt="">German</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-spain.jpg" class="mr-5" alt="">Spain</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"> <i class="fa fa-user mr-5"></i><span class="hidden-xs">My Account<i class="fa fa-angle-down ml-5"></i></span> </a>
+                    <ul class="dropdown-menu w-150" role="menu">
+                        <li><a href="login.html">Login</a>
+                        </li>
+                        <li><a href="register.html">Create Account</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="wishlist.html">Wishlist (5)</a>
+                        </li>
+                        <li><a href="cart.html">My Cart</a>
+                        </li>
+                        <li><a href="checkout.html">Checkout</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"> <i class="fa fa-shopping-basket mr-5"></i> <span class="hidden-xs">
                                 Cart<sup class="text-primary">(3)</sup>
                                 <i class="fa fa-angle-down ml-5"></i>
                             </span> </a>
-          <ul class="dropdown-menu cart w-250" role="menu">
-            <li>
-              <div class="cart-items">
-                <ol class="items">
-                  <li>
-                    <a href="#" class="product-image"> <img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive" alt="Sample Product "> </a>
-                    <div class="product-details">
-                      <div class="close-icon"> <a href="#"><i class="fa fa-close"></i></a> </div>
-                      <p class="product-name"> <a href="#">Sumi9xm@gmail.com</a> </p> <strong>1</strong> x <span class="price text-primary">$59.99</span> </div>
-                    <!-- end product-details -->
-                  </li>
-                  <!-- end item -->
-                  <li>
-                    <a href="#" class="product-image"> <img src="https://lh3.googleusercontent.com/-Gy3KAlilHAw/WNf7a2eL5YI/AAAAAAAAD2Y/V3jUt14HiZA3HLpeOKkSaOu57efGuMw9ACL0B/w245-d-h318-n-rw/shoes_01.jpg" class="img-responsive" alt="Sample Product "> </a>
-                    <div class="product-details">
-                      <div class="close-icon"> <a href="#"><i class="fa fa-close"></i></a> </div>
-                      <p class="product-name"> <a href="#">Lorem Ipsum dolor sit</a> </p> <strong>1</strong> x <span class="price text-primary">$39.99</span> </div>
-                    <!-- end product-details -->
-                  </li>
-                  <!-- end item -->
-                  <li>
-                    <a href="#" class="product-image"> <img src="https://lh3.googleusercontent.com/-ydDc-0L0WFY/WNf7a6Awe_I/AAAAAAAAD2Y/I8IzJtYRWegkOUxCZ5SCK6vbdiiSxVsCQCL0B/w245-d-h318-n-rw/bags_07.jpg" class="img-responsive" alt="Sample Product "> </a>
-                    <div class="product-details">
-                      <div class="close-icon"> <a href="#"><i class="fa fa-close"></i></a> </div>
-                      <p class="product-name"> <a href="#">Lorem Ipsum dolor sit</a> </p> <strong>1</strong> x <span class="price text-primary">$29.99</span> </div>
-                    <!-- end product-details -->
-                  </li>
-                  <!-- end item -->
-                </ol>
-              </div>
-            </li>
-            <li>
-              <div class="cart-footer"> <a href="#" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>View
+                    <ul class="dropdown-menu cart w-250" role="menu">
+                        <li>
+                            <div class="cart-items">
+                                <ol class="items">
+                                    <li>
+                                        <a href="#" class="product-image"> <img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive" alt="Sample Product "> </a>
+                                        <div class="product-details">
+                                            <div class="close-icon"> <a href="#"><i class="fa fa-close"></i></a> </div>
+                                            <p class="product-name"> <a href="#">Sumi9xm@gmail.com</a> </p> <strong>1</strong> x <span class="price text-primary">$59.99</span> </div>
+                                        <!-- end product-details -->
+                                    </li>
+                                    <!-- end item -->
+                                    <li>
+                                        <a href="#" class="product-image"> <img src="https://lh3.googleusercontent.com/-Gy3KAlilHAw/WNf7a2eL5YI/AAAAAAAAD2Y/V3jUt14HiZA3HLpeOKkSaOu57efGuMw9ACL0B/w245-d-h318-n-rw/shoes_01.jpg" class="img-responsive" alt="Sample Product "> </a>
+                                        <div class="product-details">
+                                            <div class="close-icon"> <a href="#"><i class="fa fa-close"></i></a> </div>
+                                            <p class="product-name"> <a href="#">Lorem Ipsum dolor sit</a> </p> <strong>1</strong> x <span class="price text-primary">$39.99</span> </div>
+                                        <!-- end product-details -->
+                                    </li>
+                                    <!-- end item -->
+                                    <li>
+                                        <a href="#" class="product-image"> <img src="https://lh3.googleusercontent.com/-ydDc-0L0WFY/WNf7a6Awe_I/AAAAAAAAD2Y/I8IzJtYRWegkOUxCZ5SCK6vbdiiSxVsCQCL0B/w245-d-h318-n-rw/bags_07.jpg" class="img-responsive" alt="Sample Product "> </a>
+                                        <div class="product-details">
+                                            <div class="close-icon"> <a href="#"><i class="fa fa-close"></i></a> </div>
+                                            <p class="product-name"> <a href="#">Lorem Ipsum dolor sit</a> </p> <strong>1</strong> x <span class="price text-primary">$29.99</span> </div>
+                                        <!-- end product-details -->
+                                    </li>
+                                    <!-- end item -->
+                                </ol>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cart-footer"> <a href="#" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>View
 					Cart</a> <a href="#" class="pull-right"><i class="fa fa-shopping-basket mr-5"></i>Checkout</a> </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </nav><!--=========-TOP_BAR============-->
-    
- <!--=========MIDDEL-TOP_BAR============-->
-    
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--=========-TOP_BAR============-->
+
+    <!--=========MIDDEL-TOP_BAR============-->
+
     <div class="middleBar">
-    <div class="container">
-  <div class="row display-table">
-    <div class="col-sm-3 vertical-align text-left hidden-xs">
-      <a href="javascript:void(0);"> <img width="" src="https://lh3.googleusercontent.com/-r0Fhzz-so14/WNf9-4M65JI/AAAAAAAAD3E/ht6IhlL9gG4ujE2Hqiq70U3jBb6KQmaAQCL0B/w180-d-h43-p-rw/logo-2.png" alt=""></a>
-    </div>
-    <!-- end col -->
-    <div class="col-sm-7 vertical-align text-center">
-      <form>
-        <div class="row grid-space-1">
-          <div class="col-sm-6">
-            <input type="text" name="keyword" class="form-control input-lg" placeholder="Search">
-         </div>
-          <!-- end col -->
-          <div class="col-sm-3">
-            <select class="form-control input-lg" name="category">
+        <div class="container">
+            <div class="row display-table">
+                <div class="col-sm-3 vertical-align text-left hidden-xs">
+                    <a href="javascript:void(0);"> <img width="" src="https://lh3.googleusercontent.com/-r0Fhzz-so14/WNf9-4M65JI/AAAAAAAAD3E/ht6IhlL9gG4ujE2Hqiq70U3jBb6KQmaAQCL0B/w180-d-h43-p-rw/logo-2.png" alt=""></a>
+                </div>
+                <!-- end col -->
+                <div class="col-sm-7 vertical-align text-center">
+                    <form>
+                        <div class="row grid-space-1">
+                            <div class="col-sm-6">
+                                <input type="text" name="keyword" class="form-control input-lg" placeholder="Search">
+                            </div>
+                            <!-- end col -->
+                            <div class="col-sm-3">
+                                <select class="form-control input-lg" name="category">
               <option value="all">All Categories</option>
               <optgroup label="Mens">
                 <option value="shirts">Shirts</option>
@@ -171,541 +934,546 @@
                 <option value="pc">PC</option>
               </optgroup>
             </select>
-          </div>
-          <!-- end col -->
-          <div class="col-sm-3">
-            <input type="submit" class="btn btn-default btn-block btn-lg" value="Search">
-         </div>
-          <!-- end col -->
-        </div>
-        <!-- end row -->
-      </form>
-    </div>
-    <!-- end col -->
-    <div class="col-sm-2 vertical-align header-items hidden-xs">
-      <div class="header-item mr-5">
-        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wishlist"> <i class="fa fa-heart-o"></i> <sub>32</sub> </a>
-      </div>
-      <div class="header-item">
-        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compare"> <i class="fa fa-refresh"></i> <sub>2</sub> </a>
-      </div>
-    </div>
-    <!-- end col -->
-  </div>
-  <!-- end  row -->
-  <div class="row">
-
-            <!--div class="btn-group btn-group-justified">
-                <a href="#" class="btn btn-info cat">
-                    <h4><i class="fa fa-bars" aria-hidden="true"></i> CATEGORIES</h4>
-                </a>
-                <a href="#" class="btn btn-default">
-                    <h4>ABOUT</h4>
-                </a>
-                <a href="#" class="btn btn-default">
-                    <h4>RETURNS</h4>
-                </a>
-                <a href="#" class="btn btn-default">
-                    <h4>DELIVERY</h4>
-                </a>
-            </div-->
-
-            <div class="col-md-12 shop-tab-container">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 shop-tab-menu">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">
-                            <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Laptop &amp; PC's</h4>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Cameras</h4>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Mens Clothing</h4>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Womens Clothing</h4>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Watches</h4>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Tablets</h4>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> All Categories</h4>
-                        </a>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-sm-3">
+                                <input type="submit" class="btn btn-default btn-block btn-lg" value="Search">
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                    </form>
+                </div>
+                <!-- end col -->
+                <div class="col-sm-2 vertical-align header-items hidden-xs">
+                    <div class="header-item mr-5">
+                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wishlist"> <i class="fa fa-heart-o"></i> <sub>32</sub> </a>
+                    </div>
+                    <div class="header-item">
+                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compare"> <i class="fa fa-refresh"></i> <sub>2</sub> </a>
                     </div>
                 </div>
-                <!-- <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 shop-tab">
-                    <div class="shop-tab-content active">
-
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
-
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img src="http://placehold.it/800x400" alt="...">
-                                    <div class="carousel-caption">
-                                        <h2>Heading</h2>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <img src="http://placehold.it/800x400" alt="...">
-                                    <div class="carousel-caption">
-                                        <h2>Heading</h2>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <img src="http://placehold.it/800x400" alt="...">
-                                    <div class="carousel-caption">
-                                        <h2>Heading</h2>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                            </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </a>
-                        </div>
-
-                    </div>
-                </div> -->
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 shop-tab">
-                    <h2>Trending <b>Products</b></h2>
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-                        <!-- Carousel indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-                            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-                            <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
-                        </ol>
-                        <!-- Wrapper for carousel items -->
-                        <div class="carousel-inner">
-                            <div class="item carousel-item">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Apple iPad</h4>
-                                                <p class="item-price"><strike>$400.00</strike> <span>$369.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Sony Headphone</h4>
-                                                <p class="item-price"><strike>$25.00</strike> <span>$23.99</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Macbook Air</h4>
-                                                <p class="item-price"><strike>$899.00</strike> <span>$649.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Nikon DSLR</h4>
-                                                <p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item carousel-item">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Sony Play Station</h4>
-                                                <p class="item-price"><strike>$289.00</strike> <span>$269.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Macbook Pro</h4>
-                                                <p class="item-price"><strike>$1099.00</strike> <span>$869.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Bose Speaker</h4>
-                                                <p class="item-price"><strike>$109.00</strike> <span>$99.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Samsung Galaxy S8</h4>
-                                                <p class="item-price"><strike>$599.00</strike> <span>$569.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item carousel-item active">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Apple iPhone</h4>
-                                                <p class="item-price"><strike>$369.00</strike> <span>$349.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Canon DSLR</h4>
-                                                <p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Google Pixel</h4>
-                                                <p class="item-price"><strike>$450.00</strike> <span>$418.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>Apple Watch</h4>
-                                                <p class="item-price"><strike>$350.00</strike> <span>$330.00</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carousel controls -->
-                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </div>
-                </div>
-
+                <!-- end col -->
             </div>
+            <!-- end  row -->
         </div>
-</div>
-</div>
-    
-    
-<nav class="navbar navbar-main navbar-default" role="navigation" style="opacity: 1;">
-          <div class="container">
+    </div>
+
+
+    <nav class="navbar navbar-main navbar-default" role="navigation" style="opacity: 1;">
+        <div class="container">
             <!-- Brand and toggle -->
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-              </button>             
+              </button>
             </div>
-        
+
             <!-- Collect the nav links,  -->
-            <div class="collapse navbar-collapse navbar-1" style="margin-top: 0px;">            
-              <ul class="nav navbar-nav">
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Home</a></li>
-                  
-                <li class="dropdown megaDropMenu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Shop <i class="fa fa-angle-down ml-5"></i></a>
-                  <ul class="dropdown-menu row">
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Products Grid View</li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Sidebar Left</a></li>
-                        <li><a href="#">Products Left</a></li>
-                     </ul>
+            <div class="collapse navbar-collapse navbar-1" style="margin-top: 0px;">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Home</a></li>
+
+                    <li class="dropdown megaDropMenu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Shop <i class="fa fa-angle-down ml-5"></i></a>
+                        <ul class="dropdown-menu row">
+                            <li class="col-sm-3 col-xs-12">
+                                <ul class="list-unstyled">
+                                    <li>Products Grid View</li>
+                                    <li><a href="#">Products</a></li>
+                                    <li><a href="#">Sidebar Left</a></li>
+                                    <li><a href="#">Products Left</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3 col-xs-12">
+                                <ul class="list-unstyled">
+                                    <li>Products List View</li>
+                                    <li><a href="#"> Sidebar Left</a></li>
+                                    <li><a href="#">Products Left</a></li>
+                                    <li><a href="#">Products Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3 col-xs-12">
+                                <ul class="list-unstyled">
+                                    <li>Checkout</li>
+                                    <li><a href="#">Step 1</a></li>
+                                    <li><a href="#">Step 2</a></li>
+                                    <li><a href="#">Step 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3 col-xs-12">
+                                <ul class="list-unstyled">
+                                    <li>Sumit Kumar</li>
+                                </ul>
+                                <img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive" alt="menu-img">
+                            </li>
+                        </ul>
                     </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Products List View</li>
-                        <li><a href="#"> Sidebar Left</a></li>
-                        <li><a href="#">Products Left</a></li>
-                        <li><a href="#">Products Sidebar</a></li>
-                       </ul>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Page <i class="fa fa-angle-down ml-5"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">Register or Login</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Password Recovery</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">404 Not Found</a></li>
+                            <li><a href="#">Short Code</a></li>
+                            <li><a href="#">Coming Soon</a></li>
+                        </ul>
                     </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Checkout</li>
-                        <li><a href="#">Step 1</a></li>
-                        <li><a href="#">Step 2</a></li>
-                        <li><a href="#">Step 3</a></li>
-                     </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                        <ul class="list-unstyled">
-                        <li>Sumit Kumar</li>
-                     </ul>
-                      <img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive" alt="menu-img">
-                    </li>
-                  </ul>
-                </li>
-                  
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Page <i class="fa fa-angle-down ml-5"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-left">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Register or Login</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Password Recovery</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">404 Not Found</a></li>
-                    <li><a href="#">Short Code</a></li>
-                    <li><a href="#">Coming Soon</a></li>
-                  </ul>
-                </li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Blog</a></li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">My List</a></li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div>
-        </nav>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  <script src="js/jquery-3.1.1.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script type="text/javascript">
-    ! function($, n, e) {
-      var o = $();
-      $.fn.dropdownHover = function(e) {
-        return "ontouchstart" in document ? this : (o = o.add(this.parent()), this.each(function() {
-          function t(e) {
-            o.find(":focus").blur(), h.instantlyCloseOthers === !0 && o.removeClass("open"), n.clearTimeout(c), i.addClass("open"), r.trigger(a)
-          }
-          var r = $(this),
-            i = r.parent(),
-            d = {
-              delay: 100,
-              instantlyCloseOthers: !0
-            },
-            s = {
-              delay: $(this).data("delay"),
-              instantlyCloseOthers: $(this).data("close-others")
-            },
-            a = "show.bs.dropdown",
-            u = "hide.bs.dropdown",
-            h = $.extend(!0, {}, d, e, s),
-            c;
-          i.hover(function(n) {
-            return i.hasClass("open") || r.is(n.target) ? void t(n) : !0
-          }, function() {
-            c = n.setTimeout(function() {
-              i.removeClass("open"), r.trigger(u)
-            }, h.delay)
-          }), r.hover(function(n) {
-            return i.hasClass("open") || i.is(n.target) ? void t(n) : !0
-          }), i.find(".dropdown-submenu").each(function() {
-            var e = $(this),
-              o;
-            e.hover(function() {
-              n.clearTimeout(o), e.children(".dropdown-menu").show(), e.siblings().children(".dropdown-menu").hide()
-            }, function() {
-              var t = e.children(".dropdown-menu");
-              o = n.setTimeout(function() {
-                t.hide()
-              }, h.delay)
-            })
-          })
-        }))
-      }, $(document).ready(function() {
-        $('[data-hover="dropdown"]').dropdownHover()
-      })
-    }(jQuery, this);
-  </script>
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Blog</a></li>
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">My List</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+
+    <div class="row">
+
+        <!--div class="btn-group btn-group-justified">
+            <a href="#" class="btn btn-info cat">
+                <h4><i class="fa fa-bars" aria-hidden="true"></i> CATEGORIES</h4>
+            </a>
+            <a href="#" class="btn btn-default">
+                <h4>ABOUT</h4>
+            </a>
+            <a href="#" class="btn btn-default">
+                <h4>RETURNS</h4>
+            </a>
+            <a href="#" class="btn btn-default">
+                <h4>DELIVERY</h4>
+            </a>
+        </div-->
+
+        <div class="col-md-12 shop-tab-container">
+            <!--div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 shop-tab-menu">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Laptop & PC's</h4>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Cameras</h4>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Mens Clothing</h4>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Womens Clothing</h4>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Watches</h4>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> Tablets</h4>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4><i class="fa fa-chevron-right" aria-hidden="true"></i> All Categories</h4>
+                    </a>
+                </div>
+            </div -->
+            <!-- <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 shop-tab">
+              <div class="shop-tab-content active">
+
+                  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+                      <ol class="carousel-indicators">
+                          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                      </ol>
+
+                      <div class="carousel-inner">
+                          <div class="item active">
+                              <img src="http://placehold.it/800x400" alt="...">
+                              <div class="carousel-caption">
+                                  <h2>Heading</h2>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <img src="http://placehold.it/800x400" alt="...">
+                              <div class="carousel-caption">
+                                  <h2>Heading</h2>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <img src="http://placehold.it/800x400" alt="...">
+                              <div class="carousel-caption">
+                                  <h2>Heading</h2>
+                              </div>
+                          </div>
+                      </div>
+
+                      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                      </a>
+                      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right"></span>
+                      </a>
+                  </div>
+
+              </div>
+          </div> -->
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 shop-tab">
+                <h2>Trending <b>Products</b></h2>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <!-- Carousel indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Apple iPad</h4>
+                                            <p class="item-price"><strike>$400.00</strike> <span>$369.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Sony Headphone</h4>
+                                            <p class="item-price"><strike>$25.00</strike> <span>$23.99</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Macbook Air</h4>
+                                            <p class="item-price"><strike>$899.00</strike> <span>$649.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Nikon DSLR</h4>
+                                            <p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item carousel-item">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Sony Play Station</h4>
+                                            <p class="item-price"><strike>$289.00</strike> <span>$269.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Macbook Pro</h4>
+                                            <p class="item-price"><strike>$1099.00</strike> <span>$869.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Bose Speaker</h4>
+                                            <p class="item-price"><strike>$109.00</strike> <span>$99.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Samsung Galaxy S8</h4>
+                                            <p class="item-price"><strike>$599.00</strike> <span>$569.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item carousel-item">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Apple iPhone</h4>
+                                            <p class="item-price"><strike>$369.00</strike> <span>$349.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Canon DSLR</h4>
+                                            <p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Google Pixel</h4>
+                                            <p class="item-price"><strike>$450.00</strike> <span>$418.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="https://image.ibb.co/g0CAPp/ipad.jpg" class="img-responsive img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Apple Watch</h4>
+                                            <p class="item-price"><strike>$350.00</strike> <span>$330.00</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel controls -->
+                    <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 shop-tab">
+                <h2>Latest <b>Products</b></h2>
+            </div>
+
+
+            </!--div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+                <h2>Made By IdeaFactorie</h2>
+            </div>
+        </div>
+
+
+        <!-- <script src="js/jquery-3.1.1.js"></script>
+        <script src="js/bootstrap.js"></script> -->
+
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            ! function($, n, e) {
+                var o = $();
+                $.fn.dropdownHover = function(e) {
+                    return "ontouchstart" in document ? this : (o = o.add(this.parent()), this.each(function() {
+                        function t(e) {
+                            o.find(":focus").blur(), h.instantlyCloseOthers === !0 && o.removeClass("open"), n.clearTimeout(c), i.addClass("open"), r.trigger(a)
+                        }
+                        var r = $(this),
+                            i = r.parent(),
+                            d = {
+                                delay: 100,
+                                instantlyCloseOthers: !0
+                            },
+                            s = {
+                                delay: $(this).data("delay"),
+                                instantlyCloseOthers: $(this).data("close-others")
+                            },
+                            a = "show.bs.dropdown",
+                            u = "hide.bs.dropdown",
+                            h = $.extend(!0, {}, d, e, s),
+                            c;
+                        i.hover(function(n) {
+                            return i.hasClass("open") || r.is(n.target) ? void t(n) : !0
+                        }, function() {
+                            c = n.setTimeout(function() {
+                                i.removeClass("open"), r.trigger(u)
+                            }, h.delay)
+                        }), r.hover(function(n) {
+                            return i.hasClass("open") || i.is(n.target) ? void t(n) : !0
+                        }), i.find(".dropdown-submenu").each(function() {
+                            var e = $(this),
+                                o;
+                            e.hover(function() {
+                                n.clearTimeout(o), e.children(".dropdown-menu").show(), e.siblings().children(".dropdown-menu").hide()
+                            }, function() {
+                                var t = e.children(".dropdown-menu");
+                                o = n.setTimeout(function() {
+                                    t.hide()
+                                }, h.delay)
+                            })
+                        })
+                    }))
+                }, $(document).ready(function() {
+                    $('[data-hover="dropdown"]').dropdownHover()
+                })
+            }(jQuery, this);
+        </script>
 </body>
 
 </html>
