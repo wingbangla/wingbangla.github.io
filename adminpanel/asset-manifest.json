@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/adminpanel/static/css/main.95068e3a.chunk.css",
+    "main.js": "/adminpanel/static/js/main.cd140ab0.chunk.js",
+    "main.js.map": "/adminpanel/static/js/main.cd140ab0.chunk.js.map",
+    "runtime-main.js": "/adminpanel/static/js/runtime-main.db1be315.js",
+    "runtime-main.js.map": "/adminpanel/static/js/runtime-main.db1be315.js.map",
+    "static/css/2.7f1403ef.chunk.css": "/adminpanel/static/css/2.7f1403ef.chunk.css",
+    "static/js/2.c9a4ae83.chunk.js": "/adminpanel/static/js/2.c9a4ae83.chunk.js",
+    "static/js/2.c9a4ae83.chunk.js.map": "/adminpanel/static/js/2.c9a4ae83.chunk.js.map",
+    "index.html": "/adminpanel/index.html",
+    "precache-manifest.7308cc48ff264da0ca83da03e9ed763c.js": "/adminpanel/precache-manifest.7308cc48ff264da0ca83da03e9ed763c.js",
+    "service-worker.js": "/adminpanel/service-worker.js",
+    "static/css/2.7f1403ef.chunk.css.map": "/adminpanel/static/css/2.7f1403ef.chunk.css.map",
+    "static/css/main.95068e3a.chunk.css.map": "/adminpanel/static/css/main.95068e3a.chunk.css.map",
+    "static/js/2.c9a4ae83.chunk.js.LICENSE.txt": "/adminpanel/static/js/2.c9a4ae83.chunk.js.LICENSE.txt",
+    "static/media/fonts.css": "/adminpanel/static/media/alfont_com_AlFont_com_DiodrumArabic-Semibold-1.78129f7e.ttf",
+    "static/media/logo.jpg": "/adminpanel/static/media/logo.2fd2d80b.jpg",
+    "static/media/vendor.png": "/adminpanel/static/media/vendor.2b7c5baa.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.db1be315.js",
+    "static/css/2.7f1403ef.chunk.css",
+    "static/js/2.c9a4ae83.chunk.js",
+    "static/css/main.95068e3a.chunk.css",
+    "static/js/main.cd140ab0.chunk.js"
+  ]
+}
