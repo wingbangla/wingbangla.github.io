@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/adminpanel/static/css/main.95068e3a.chunk.css",
-    "main.js": "/adminpanel/static/js/main.f7fc0381.chunk.js",
-    "main.js.map": "/adminpanel/static/js/main.f7fc0381.chunk.js.map",
+    "main.css": "/adminpanel/static/css/main.a246cf36.chunk.css",
+    "main.js": "/adminpanel/static/js/main.e4e591f3.chunk.js",
+    "main.js.map": "/adminpanel/static/js/main.e4e591f3.chunk.js.map",
     "runtime-main.js": "/adminpanel/static/js/runtime-main.db1be315.js",
     "runtime-main.js.map": "/adminpanel/static/js/runtime-main.db1be315.js.map",
     "static/css/2.7f1403ef.chunk.css": "/adminpanel/static/css/2.7f1403ef.chunk.css",
-    "static/js/2.c9a4ae83.chunk.js": "/adminpanel/static/js/2.c9a4ae83.chunk.js",
-    "static/js/2.c9a4ae83.chunk.js.map": "/adminpanel/static/js/2.c9a4ae83.chunk.js.map",
+    "static/js/2.ee8d6ec7.chunk.js": "/adminpanel/static/js/2.ee8d6ec7.chunk.js",
+    "static/js/2.ee8d6ec7.chunk.js.map": "/adminpanel/static/js/2.ee8d6ec7.chunk.js.map",
     "index.html": "/adminpanel/index.html",
-    "precache-manifest.8a24c6595425ded9837655988246d448.js": "/adminpanel/precache-manifest.8a24c6595425ded9837655988246d448.js",
+    "precache-manifest.93664f621afa47023d02f87ded27b66d.js": "/adminpanel/precache-manifest.93664f621afa47023d02f87ded27b66d.js",
     "service-worker.js": "/adminpanel/service-worker.js",
     "static/css/2.7f1403ef.chunk.css.map": "/adminpanel/static/css/2.7f1403ef.chunk.css.map",
-    "static/css/main.95068e3a.chunk.css.map": "/adminpanel/static/css/main.95068e3a.chunk.css.map",
-    "static/js/2.c9a4ae83.chunk.js.LICENSE.txt": "/adminpanel/static/js/2.c9a4ae83.chunk.js.LICENSE.txt",
+    "static/css/main.a246cf36.chunk.css.map": "/adminpanel/static/css/main.a246cf36.chunk.css.map",
+    "static/js/2.ee8d6ec7.chunk.js.LICENSE.txt": "/adminpanel/static/js/2.ee8d6ec7.chunk.js.LICENSE.txt",
     "static/media/fonts.css": "/adminpanel/static/media/alfont_com_AlFont_com_DiodrumArabic-Semibold-1.78129f7e.ttf",
-    "static/media/logo.jpg": "/adminpanel/static/media/logo.2fd2d80b.jpg",
-    "static/media/vendor.png": "/adminpanel/static/media/vendor.2b7c5baa.png"
+    "static/media/companyLogo.png": "/adminpanel/static/media/companyLogo.02b19d2b.png",
+    "static/media/vendorLogo.png": "/adminpanel/static/media/vendorLogo.91a8ed67.png"
   },
   "entrypoints": [
     "static/js/runtime-main.db1be315.js",
     "static/css/2.7f1403ef.chunk.css",
-    "static/js/2.c9a4ae83.chunk.js",
-    "static/css/main.95068e3a.chunk.css",
-    "static/js/main.f7fc0381.chunk.js"
+    "static/js/2.ee8d6ec7.chunk.js",
+    "static/css/main.a246cf36.chunk.css",
+    "static/js/main.e4e591f3.chunk.js"
   ]
 }
